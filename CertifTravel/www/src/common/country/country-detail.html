@@ -1,0 +1,31 @@
+<div style="height: 200px; overflow: scroll;">
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead class="header-list">
+			<tr>
+				<th width="30%">Name</th>
+				<th width="30%">Region</th>
+				<th width="20%">Currency</th>
+				<th width="20%">Education</th>
+			</tr>
+		</thead>
+		<tfoot class="header-list">
+			<tr>
+				<th width="30%">Name</th>
+				<th width="30%">Region</th>
+				<th width="20%">Currency</th>
+				<th width="20%">Education</th>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr *ngFor="#country of countryList ">
+				<td>{{country.name.common}}</td>
+				<td>{{country.region}}</td>
+				<td>{{country.currency[0]}}</td>
+				<td style="text-align: center;"><img
+					src="src/images/stat.png" style="cursor: pointer;"
+					(click)="listEducProps(country.cca3)"
+					title="show properties" /></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

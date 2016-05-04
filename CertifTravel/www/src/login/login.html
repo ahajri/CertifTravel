@@ -1,0 +1,28 @@
+<div class="login jumbotron center-block">
+	<div style="display: inline;">
+		<h2>Login</h2>
+		<img alt="MarcLogic" src="/src/images/marklogic.png" style="float: right;">
+	</div>
+	<form role="form" [ngFormModel]="loginForm"
+		(submit)="login($event, username.value, password.value)">
+		<div class="form-group">
+			<label for="username">Username</label> <input type="text" #username
+				ngControl="username" class="form-control" id="username"
+				placeholder="Username">
+			<control-messages control="username"></control-messages>
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label> <input type="password"
+				ngControl="password" #password class="form-control" id="password"
+				placeholder="Password">
+			<control-messages control="password"></control-messages>
+		</div>
+		<img src="src/images/loader.gif" *ngIf="loading" />
+<!-- 		<label style="color: red;" *ngIf="errorMsg">{{errorMsg}}</label> -->
+		 <div  class="alert alert-danger" *ngIf="errorMsg">
+          {{errorMsg}}
+        </div>
+		<button type="submit" class="btn btn-default">Submit</button>
+		<a href="/signup">Signup</a>
+	</form>
+</div>

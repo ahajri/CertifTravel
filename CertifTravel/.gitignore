@@ -1,0 +1,13 @@
+.settings
+
+.git
+
+.target
+
+.project
+
+target
+
+www/node_modules
+www/backend/node_modules
+
